@@ -47,6 +47,12 @@
             border: 1px solid rgba(168, 85, 247, 0.3);
             backdrop-filter: blur(10px);
         }
+        .whale-episode-bg {
+            background: url('attached_assets/Episode 2 - Whale Songs_1756921499617.png') center/cover no-repeat;
+            border-radius: 20px;
+            border: 3px solid rgba(168, 85, 247, 0.4);
+            height: 300px;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -86,12 +92,7 @@
                 <div class="card-glow p-8 rounded-2xl text-center">
                     <h2 class="text-2xl font-bold text-white mb-6">Listen to the Episode</h2>
                     <div class="bg-slate-800 rounded-xl p-4">
-                        <!-- Placeholder for whale songs episode player -->
-                        <div class="py-12 text-purple-300">
-                            <i data-lucide="headphones" class="w-16 h-16 mx-auto mb-4"></i>
-                            <p class="text-lg">Whale Songs episode coming soon!</p>
-                            <p class="text-sm mt-2">This magical underwater adventure is being prepared just for you.</p>
-                        </div>
+                        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/0TbVkY8BYTPJlgWBNBqEPU?utm_source=generator&theme=0&t=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
                     <div class="flex items-center justify-center gap-6 mt-6 text-purple-300">
                         <span class="flex items-center gap-1">
@@ -104,6 +105,11 @@
                         </span>
                     </div>
                 </div>
+            </div>
+
+            <!-- Episode Image -->
+            <div class="max-w-3xl mx-auto mb-16">
+                <div class="whale-episode-bg"></div>
             </div>
 
             <!-- Episode Description -->
