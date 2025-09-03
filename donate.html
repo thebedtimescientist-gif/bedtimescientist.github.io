@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support the Show - The Bedtime Scientist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700;900&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1b3e 0%, #2c1810 50%, #1a1b3e 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+        .font-serif-display { font-family: 'Playfair Display', serif; }
+
+        .cosmic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(2px 2px at 20px 30px, #edf2f7, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, #cbd5e0, transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(2px 2px at 160px 30px, #edf2f7, transparent),
+                linear-gradient(135deg, #1a1b3e 0%, #2c1810 50%, #1a1b3e 100%);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: twinkle 8s ease-in-out infinite alternate;
+            z-index: -1;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        .card-glow {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .card-glow:hover {
+            border-color: rgba(168, 85, 247, 0.6);
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.2);
+        }
+
+        .glow-button {
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+            transition: all 0.3s ease;
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.7);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="cosmic-bg"></div>
+
+    <!-- Header -->
+    <header class="relative z-50 bg-slate-900/30 backdrop-blur-lg border-b border-purple-500/30">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="font-serif-display text-2xl font-bold text-white flex items-center gap-2">
+                <i data-lucide="telescope" class="text-purple-400"></i>
+                The Bedtime Scientist
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="episodes.html" class="text-slate-300 hover:text-purple-300 transition-colors">Episodes</a>
+                <a href="contact.html" class="text-slate-300 hover:text-purple-300 transition-colors">Contact</a>
+                <a href="donate.html" class="text-purple-300 font-semibold">Donate</a>
+            </nav>
+            <a href="/" class="bg-purple-600 text-white font-bold py-2 px-5 rounded-full hover:bg-purple-500 transition-colors">Home</a>
+        </div>
+    </header>
+
+    <main class="relative z-10 py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-bold font-serif-display text-white mb-6">Help Keep the Wonder Alive</h1>
+                <p class="text-xl text-purple-200 max-w-3xl mx-auto">
+                    The Bedtime Scientist is a passion project created with love for curious minds everywhere. 
+                    Your support helps us continue creating magical science stories that inspire wonder and learning.
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <!-- Impact Section -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold font-serif-display text-white text-center mb-8">Your Support Makes This Possible</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="card-glow p-6 rounded-2xl text-center">
+                            <i data-lucide="mic" class="mx-auto h-12 w-12 text-purple-400 mb-4"></i>
+                            <h3 class="text-xl font-semibold text-white mb-3">Quality Audio Production</h3>
+                            <p class="text-purple-200 text-sm">Professional recording equipment and studio time to create crystal-clear audio that soothes and engages.</p>
+                        </div>
+                        <div class="card-glow p-6 rounded-2xl text-center">
+                            <i data-lucide="book" class="mx-auto h-12 w-12 text-purple-400 mb-4"></i>
+                            <h3 class="text-xl font-semibold text-white mb-3">Research & Writing</h3>
+                            <p class="text-purple-200 text-sm">Time spent researching fascinating science topics and crafting age-appropriate stories that spark curiosity.</p>
+                        </div>
+                        <div class="card-glow p-6 rounded-2xl text-center">
+                            <i data-lucide="globe" class="mx-auto h-12 w-12 text-purple-400 mb-4"></i>
+                            <h3 class="text-xl font-semibold text-white mb-3">Free Access for All</h3>
+                            <p class="text-purple-200 text-sm">Keeping all episodes completely free so every family can access quality educational content, regardless of their budget.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Donation Options -->
+                <div class="grid md:grid-cols-2 gap-12 mb-16">
+                    <!-- One-time Donation -->
+                    <div class="card-glow p-8 rounded-2xl">
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                            <i data-lucide="gift" class="text-purple-400"></i>
+                            One-Time Support
+                        </h2>
+                        <p class="text-purple-200 mb-6">
+                            Make a one-time contribution to help fund future episodes and keep the show running.
+                        </p>
+                        <div class="space-y-4">
+                            <button class="w-full bg-purple-600 text-white font-bold py-4 px-6 rounded-lg glow-button">
+                                Donate $5 - Buy a Coffee ☕
+                            </button>
+                            <button class="w-full bg-purple-600 text-white font-bold py-4 px-6 rounded-lg glow-button">
+                                Donate $15 - Fund an Episode 🎙️
+                            </button>
+                            <button class="w-full bg-purple-600 text-white font-bold py-4 px-6 rounded-lg glow-button">
+                                Donate $30 - Super Supporter 🌟
+                            </button>
+                            <button class="w-full border-2 border-purple-500 text-purple-300 font-bold py-4 px-6 rounded-lg hover:bg-purple-500/20 transition-colors">
+                                Custom Amount
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Monthly Support -->
+                    <div class="card-glow p-8 rounded-2xl">
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                            <i data-lucide="heart" class="text-purple-400"></i>
+                            Monthly Support
+                        </h2>
+                        <p class="text-purple-200 mb-6">
+                            Become a monthly supporter and help ensure consistent, quality content for the science community.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="border border-purple-500 rounded-lg p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold text-white">Science Friend</span>
+                                    <span class="text-purple-300 font-bold">$3/month</span>
+                                </div>
+                                <p class="text-purple-200 text-sm">Help keep the lights on and stories flowing</p>
+                            </div>
+                            <div class="border border-purple-500 rounded-lg p-4 bg-purple-500/10">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold text-white">Wonder Supporter</span>
+                                    <span class="text-purple-300 font-bold">$10/month</span>
+                                </div>
+                                <p class="text-purple-200 text-sm">Significantly impact episode production quality</p>
+                                <span class="text-xs text-purple-300">⭐ Most Popular</span>
+                            </div>
+                            <div class="border border-purple-500 rounded-lg p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold text-white">Science Champion</span>
+                                    <span class="text-purple-300 font-bold">$25/month</span>
+                                </div>
+                                <p class="text-purple-200 text-sm">Enable new features and expanded content</p>
+                            </div>
+                            <button class="w-full bg-purple-600 text-white font-bold py-4 px-6 rounded-lg glow-button">
+                                Start Monthly Support
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Ways to Help -->
+                <div class="card-glow p-8 rounded-2xl mb-16">
+                    <h2 class="text-2xl font-bold text-white mb-6 text-center">Other Ways to Support</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <i data-lucide="share-2" class="mx-auto h-10 w-10 text-purple-400 mb-3"></i>
+                            <h3 class="font-semibold text-white mb-2">Share the Show</h3>
+                            <p class="text-purple-200 text-sm">Tell other parents about The Bedtime Scientist and help us reach more curious minds.</p>
+                        </div>
+                        <div class="text-center">
+                            <i data-lucide="star" class="mx-auto h-10 w-10 text-purple-400 mb-3"></i>
+                            <h3 class="font-semibold text-white mb-2">Leave a Review</h3>
+                            <p class="text-purple-200 text-sm">Positive reviews on podcast platforms help other families discover our science stories.</p>
+                        </div>
+                        <div class="text-center">
+                            <i data-lucide="message-circle" class="mx-auto h-10 w-10 text-purple-400 mb-3"></i>
+                            <h3 class="font-semibold text-white mb-2">Send Feedback</h3>
+                            <p class="text-purple-200 text-sm">Your suggestions and episode ideas help make the show even better for young scientists.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thank You Message -->
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold font-serif-display text-white mb-4">Thank You! 🌟</h2>
+                    <p class="text-lg text-purple-200 max-w-2xl mx-auto mb-8">
+                        Whether you donate, share, or simply listen with your little scientist, you're part of a community that believes in the power of curiosity and wonder. Together, we're inspiring the next generation of scientists, dreamers, and explorers.
+                    </p>
+                    <a href="contact.html" class="text-purple-300 hover:text-purple-200 font-semibold inline-flex items-center gap-2">
+                        <i data-lucide="mail"></i>
+                        Questions about supporting the show? Get in touch!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-slate-900/60 border-t border-purple-500/30 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-2 mb-4">
+                <i data-lucide="telescope" class="text-purple-400"></i>
+                <span class="font-serif-display text-xl font-bold text-white">The Bedtime Scientist</span>
+            </div>
+            <p class="text-purple-200 mb-6">Sparking wonder, one dream at a time.</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="episodes.html" class="text-purple-300 hover:text-purple-200">Episodes</a>
+                <a href="contact.html" class="text-purple-300 hover:text-purple-200">Contact</a>
+                <a href="donate.html" class="text-purple-300 hover:text-purple-200">Donate</a>
+            </div>
+            <p class="text-slate-400">&copy; 2025 The Bedtime Scientist. Sweet dreams and curious minds.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

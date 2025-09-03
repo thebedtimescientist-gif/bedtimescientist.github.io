@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Amazing Axolotl - The Bedtime Scientist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700;900&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1b3e 0%, #2c1810 50%, #1a1b3e 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+        .font-serif-display { font-family: 'Playfair Display', serif; }
+
+        .cosmic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(2px 2px at 20px 30px, #edf2f7, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, #cbd5e0, transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(2px 2px at 160px 30px, #edf2f7, transparent),
+                linear-gradient(135deg, #1a1b3e 0%, #2c1810 50%, #1a1b3e 100%);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: twinkle 8s ease-in-out infinite alternate;
+            z-index: -1;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        .card-glow {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="cosmic-bg"></div>
+
+    <!-- Header -->
+    <header class="relative z-50 bg-slate-900/30 backdrop-blur-lg border-b border-purple-500/30">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="font-serif-display text-2xl font-bold text-white flex items-center gap-2">
+                <i data-lucide="telescope" class="text-purple-400"></i>
+                The Bedtime Scientist
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="episodes.html" class="text-slate-300 hover:text-purple-300 transition-colors">Episodes</a>
+                <a href="contact.html" class="text-slate-300 hover:text-purple-300 transition-colors">Contact</a>
+                <a href="donate.html" class="text-slate-300 hover:text-purple-300 transition-colors">Donate</a>
+            </nav>
+            <a href="episodes.html" class="bg-purple-600 text-white font-bold py-2 px-5 rounded-full hover:bg-purple-500 transition-colors">All Episodes</a>
+        </div>
+    </header>
+
+    <main class="relative z-10 py-20">
+        <div class="container mx-auto px-6">
+            <!-- Episode Header -->
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Episode 1</span>
+                </div>
+                <h1 class="text-5xl font-bold font-serif-display text-white mb-6">The Amazing Axolotl</h1>
+                <p class="text-xl text-purple-200 max-w-3xl mx-auto">
+                    Journey to the magical underwater world of Mexico to meet nature's real-life superhero!
+                </p>
+            </div>
+
+            <!-- Audio Player -->
+            <div class="max-w-3xl mx-auto mb-16">
+                <div class="card-glow p-8 rounded-2xl text-center">
+                    <h2 class="text-2xl font-bold text-white mb-6">Listen to the Episode</h2>
+                    <div class="bg-slate-800 rounded-xl p-4">
+                        <div id="buzzsprout-player-17740306"></div>
+                        <script src="https://www.buzzsprout.com/2532225/episodes/17740306-axolotls.js?container_id=buzzsprout-player-17740306&player=small" type="text/javascript" charset="utf-8"></script>
+                    </div>
+                    <div class="flex items-center justify-center gap-6 mt-6 text-purple-300">
+                        <span class="flex items-center gap-1">
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                            12 minutes
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <i data-lucide="calendar" class="w-4 h-4"></i>
+                            Perfect for bedtime
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Episode Description -->
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 mb-16">
+                <div class="card-glow p-8 rounded-2xl">
+                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i data-lucide="book-open" class="text-purple-400"></i>
+                        About This Episode
+                    </h2>
+                    <div class="text-purple-200 space-y-4">
+                        <p>
+                            Tonight, we're diving into the crystal-clear waters of Mexico to meet one of nature's most incredible creatures - the axolotl! These amazing animals are like real-life superheroes with the power to regrow parts of their bodies.
+                        </p>
+                        <p>
+                            Your little scientist will discover why axolotls never grow up, how they breathe underwater with their feathery gills, and why scientists around the world are so fascinated by these gentle creatures.
+                        </p>
+                        <p>
+                            Perfect for curious minds who love animals and want to learn something amazing before drifting off to dreamland.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-glow p-8 rounded-2xl">
+                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i data-lucide="lightbulb" class="text-purple-400"></i>
+                        What You'll Learn
+                    </h2>
+                    <ul class="text-purple-200 space-y-3">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-purple-400 mt-0.5"></i>
+                            What makes axolotls so special and unique
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-purple-400 mt-0.5"></i>
+                            How axolotls can regrow lost body parts
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-purple-400 mt-0.5"></i>
+                            Why they live their whole lives in water
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-purple-400 mt-0.5"></i>
+                            How scientists are helping protect them
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-purple-400 mt-0.5"></i>
+                            Fun facts that will amaze your child
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Transcript -->
+            <div class="max-w-4xl mx-auto">
+                <div class="card-glow p-8 rounded-2xl">
+                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i data-lucide="file-text" class="text-purple-400"></i>
+                        Episode Transcript
+                    </h2>
+                    <div class="text-purple-200 space-y-4 max-h-96 overflow-y-auto">
+                        <p class="font-semibold">Welcome to The Bedtime Scientist...</p>
+                        <p>
+                            Tonight, we're going on a very special journey to the magical waters of Mexico, where lives one of the most amazing creatures on our planet - the axolotl. Are you ready for an underwater adventure?
+                        </p>
+                        <p>
+                            The axolotl - which you can say like "AX-oh-lot-ul" - is sometimes called the Mexican walking fish. But here's our first amazing discovery: axolotls aren't fish at all! They're actually a type of salamander that decided to spend their whole life in the water.
+                        </p>
+                        <p>
+                            Imagine if you could regrow your arm if you hurt it, or grow back a finger if you lost it. That might sound like something from a superhero movie, but axolotls can really do this! If an axolotl loses a leg, or even part of their heart, they can grow it back good as new.
+                        </p>
+                        <p>
+                            These gentle creatures have beautiful feathery gills that look like tiny underwater flowers growing from their heads. These gills help them breathe underwater, just like how fish use their gills. The gills wave gently in the water, almost like they're dancing.
+                        </p>
+                        <p>
+                            Most axolotls are dark colored with spots, but some are pale pink or white with pink gills - these ones are extra special and are called leucistic axolotls. They look like little underwater unicorns!
+                        </p>
+                        <p>
+                            Axolotls have tiny eyes and always look like they're smiling. They're very gentle creatures who spend their days swimming slowly through the water, looking for small fish and worms to eat.
+                        </p>
+                        <p>
+                            Scientists all over the world study axolotls because they want to understand how they can regrow parts of their bodies. Maybe someday, doctors will be able to help people heal from injuries the same way axolotls do.
+                        </p>
+                        <p>
+                            Unfortunately, there aren't many axolotls left in the wild. They only live in a few lakes near Mexico City, and those lakes are getting smaller. But the good news is that scientists and people who care about animals are working hard to protect them and their homes.
+                        </p>
+                        <p>
+                            As you drift off to sleep tonight, imagine swimming through the clear, cool waters with the gentle axolotls, watching their feathery gills dance in the water like underwater flowers. Maybe in your dreams, you'll discover their secrets of healing and growing...
+                        </p>
+                        <p class="font-semibold">Sweet dreams, little scientist. Tomorrow brings new wonders to explore.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="max-w-4xl mx-auto mt-16 flex justify-between items-center">
+                <a href="episodes.html" class="text-purple-300 hover:text-purple-200 font-semibold inline-flex items-center gap-2">
+                    <i data-lucide="arrow-left"></i>
+                    Back to Episodes
+                </a>
+                <a href="episode-whale-songs.html" class="bg-purple-600 text-white font-bold py-3 px-6 rounded-full hover:bg-purple-500 transition-colors inline-flex items-center gap-2">
+                    Next Episode: Whale Songs
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-slate-900/60 border-t border-purple-500/30 py-12 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-2 mb-4">
+                <i data-lucide="telescope" class="text-purple-400"></i>
+                <span class="font-serif-display text-xl font-bold text-white">The Bedtime Scientist</span>
+            </div>
+            <p class="text-purple-200 mb-6">Sparking wonder, one dream at a time.</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="episodes.html" class="text-purple-300 hover:text-purple-200">Episodes</a>
+                <a href="contact.html" class="text-purple-300 hover:text-purple-200">Contact</a>
+                <a href="donate.html" class="text-purple-300 hover:text-purple-200">Donate</a>
+            </div>
+            <p class="text-slate-400">&copy; 2025 The Bedtime Scientist. Sweet dreams and curious minds.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
