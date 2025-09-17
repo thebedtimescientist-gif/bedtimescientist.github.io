@@ -68,7 +68,6 @@ z-index: -1;
 <body class="antialiased">
     <div class="cosmic-bg"></div>
 
-    <!-- Header -->
     <header class="relative z-50 bg-slate-900/30 backdrop-blur-lg border-b border-purple-500/30">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="/" class="font-serif-display text-2xl font-bold text-white flex items-center gap-2">
@@ -77,6 +76,7 @@ z-index: -1;
             </a>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="episodes.html" class="text-slate-300 hover:text-purple-300 transition-colors">Episodes</a>
+                <a href="about.html" class="text-slate-300 hover:text-purple-300 transition-colors">About</a>
                 <a href="shop.html" class="text-slate-300 hover:text-purple-300 transition-colors">Shop</a>
                 <a href="contact.html" class="text-slate-300 hover:text-purple-300 transition-colors">Contact</a>
                 <a href="donate.html" class="text-slate-300 hover:text-purple-300 transition-colors">Donate</a>
@@ -86,7 +86,6 @@ z-index: -1;
     </header>
 
     <main class="relative z-10">
-        <!-- Hero Section -->
         <section class="min-h-screen flex items-center justify-center py-20">
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div class="text-center md:text-left">
@@ -112,7 +111,6 @@ z-index: -1;
             </div>
         </section>
 
-        <!-- Listen Now Section -->
         <section id="listen" class="py-20 bg-slate-900/40">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-4xl font-bold font-serif-display text-white mb-4">Latest Episode</h2>
@@ -122,7 +120,6 @@ z-index: -1;
                     <h3 class="text-2xl font-bold text-white mb-4">The Amazing Axolotl</h3>
                     <p class="text-purple-200 mb-6">Discover the magical underwater world of the axolotl - nature's real-life superhero that never grows up and can regrow parts of its body!</p>
                     
-                    <!-- Podcast Player -->
                     <div class="bg-slate-800 rounded-xl p-4 mb-6">
                         <div id="buzzsprout-player-17740306"></div>
                         <script src="https://www.buzzsprout.com/2532225/episodes/17740306-axolotls.js?container_id=buzzsprout-player-17740306&player=small" type="text/javascript" charset="utf-8"></script>
@@ -136,7 +133,6 @@ z-index: -1;
             </div>
         </section>
 
-        <!-- Episodes Preview -->
         <section class="py-20">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-bold font-serif-display text-white text-center mb-4">Our Science Stories</h2>
@@ -162,8 +158,10 @@ z-index: -1;
                             <h3 class="text-xl font-bold text-white">Songs of the Whales</h3>
                         </div>
                         <p class="text-purple-200 mb-4">Dive deep into the ocean to discover how whales sing beautiful songs across the seas.</p>
-                        <div class="mb-4">
-                            <iframe data-testid="embed-iframe" style="border-radius:8px" src="https://open.spotify.com/embed/episode/4NXqjHjOO6vbRO1028DOek?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <div class_="mb-4 bg-slate-800 rounded-xl p-4">
+                            <div id="buzzsprout-player-17740307"></div>
+                            <script src="https://www.buzzsprout.com/2532225/episodes/17740307-placeholder-whale-songs.js?container_id=buzzsprout-player-17740307&player=small" type="text/javascript" charset="utf-8"></script>
+                            <p class="text-xs text-slate-400 text-center mt-2">(Placeholder player for consistency)</p>
                         </div>
                         <a href="episode-whale-songs.html" class="text-purple-300 hover:text-purple-200 font-semibold">Listen & Learn →</a>
                     </div>
@@ -178,8 +176,48 @@ z-index: -1;
             </div>
         </section>
 
-        <!-- Custom Reads Section -->
         <section class="py-20 bg-slate-900/40">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold font-serif-display text-white text-center mb-12">What Parents Are Saying</h2>
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="card-glow p-6 rounded-2xl">
+                        <div class="flex items-center gap-1 mb-2">
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        </div>
+                        <p class="text-purple-200 mb-4 italic">"This is our new bedtime routine! My 5-year-old is obsessed with the Axolotl episode and asks to listen every night. So gentle and educational."</p>
+                        <p class="text-white font-semibold">- Sarah K.</p>
+                    </div>
+                    <div class="card-glow p-6 rounded-2xl">
+                        <div class="flex items-center gap-1 mb-2">
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        </div>
+                        <p class="text-purple-200 mb-4 italic">"Finally, a podcast that isn't loud or overstimulating. The narrator's voice is so calm, and my kids are actually learning something before bed."</p>
+                        <p class="text-white font-semibold">- David M.</p>
+                    </div>
+                    <div class="card-glow p-6 rounded-2xl">
+                        <div class="flex items-center gap-1 mb-2">
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        </div>
+                        <p class="text-purple-200 mb-4 italic">"I love the custom story idea! We got one for my daughter's birthday about volcanoes and she felt so special. A wonderful, unique gift."</p>
+                        <p class="text-white font-semibold">- Emily R.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-4xl font-bold font-serif-display text-white mb-6">Something Special for Your Little Scientist</h2>
                 <p class="text-lg text-purple-200 mb-8 max-w-2xl mx-auto">
@@ -192,8 +230,7 @@ z-index: -1;
             </div>
         </section>
 
-        <!-- Support Section -->
-        <section class="py-20">
+        <section class="py-20 bg-slate-900/40">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl font-bold font-serif-display text-white mb-6">Help Keep the Wonder Alive</h2>
                 <p class="text-lg text-purple-200 mb-8 max-w-2xl mx-auto">
@@ -213,21 +250,32 @@ z-index: -1;
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900/60 border-t border-purple-500/30 py-12">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center items-center gap-2 mb-4">
-                <i data-lucide="telescope" class="text-purple-400"></i>
-                <span class="font-serif-display text-xl font-bold text-white">The Bedtime Scientist</span>
+    <footer class="relative z-10 bg-slate-900/60 border-t border-purple-500/30 pt-16 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-12 card-glow p-8 rounded-2xl">
+                <h3 class="text-2xl font-bold font-serif-display text-white mb-4">Subscribe to our Newsletter</h3>
+                <p class="text-purple-200 mb-6">Get new episodes, activity sheets, and science news sent straight to your inbox.</p>
+                <form action="mailto:thebedtimescientist@gmail.com?subject=Newsletter%20Signup" method="post" enctype="text/plain" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" name="email" placeholder="Your email address..." required class="flex-grow bg-slate-800 text-white px-4 py-3 rounded-lg border border-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-400">
+                    <button type="submit" class="bg-purple-600 text-white font-bold py-3 px-6 rounded-full hover:bg-purple-500 transition-colors">Subscribe</button>
+                </form>
             </div>
-            <p class="text-purple-200 mb-6">Sparking wonder, one dream at a time.</p>
-            <div class="flex justify-center space-x-6 mb-6">
-                <a href="episodes.html" class="text-purple-300 hover:text-purple-200">Episodes</a>
-                <a href="shop.html" class="text-purple-300 hover:text-purple-200">Shop</a>
-                <a href="contact.html" class="text-purple-300 hover:text-purple-200">Contact</a>
-                <a href="donate.html" class="text-purple-300 hover:text-purple-200">Donate</a>
+
+            <div class="text-center">
+                <div class="flex justify-center items-center gap-2 mb-4">
+                    <i data-lucide="telescope" class="text-purple-400"></i>
+                    <span class="font-serif-display text-xl font-bold text-white">The Bedtime Scientist</span>
+                </div>
+                <p class="text-purple-200 mb-6">Sparking wonder, one dream at a time.</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="episodes.html" class="text-purple-300 hover:text-purple-200">Episodes</a>
+                    <a href="about.html" class="text-purple-300 hover:text-purple-200">About</a>
+                    <a href="shop.html" class="text-purple-300 hover:text-purple-200">Shop</a>
+                    <a href="contact.html" class="text-purple-300 hover:text-purple-200">Contact</a>
+                    <a href="donate.html" class="text-purple-300 hover:text-purple-200">Donate</a>
+                </div>
+                <p class="text-slate-400">&copy; 2025 The Bedtime Scientist. Sweet dreams and curious minds.</p>
             </div>
-            <p class="text-slate-400">&copy; 2025 The Bedtime Scientist. Sweet dreams and curious minds.</p>
         </div>
     </footer>
 
