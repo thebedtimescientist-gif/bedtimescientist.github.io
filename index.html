@@ -7,50 +7,50 @@
   <meta name="description" content="The Bedtime Scientist — Learn Softly... Sleep Soundly. The smartest addition to your bedtime routine." />
   <meta name="theme-color" content="#0c1222" />
 
-  <!-- Social cards -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:title" content="The Bedtime Scientist" />
   <meta property="og:description" content="Learn Softly... Sleep Soundly. Calm, factual bedtime science to help kids drift off." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/social-card.png" />
-  <meta property="og:url" content="https://thebedtimescientist-gif.github.io/" />
+  <meta property="og:image" content="https://bedtimescientist.com/attached_assets/social-card.png" />
+  <meta property="og:url" content="https://bedtimescientist.com/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="The Bedtime Scientist" />
   <meta name="twitter:description" content="Learn Softly... Sleep Soundly. Calm, factual bedtime science to help kids drift off." />
-  <meta name="twitter:image" content="assets/social-card.png" />
+  <meta name="twitter:image" content="https://bedtimescientist.com/attached_assets/social-card.png" />
 
-  <!-- Hero image preload for faster LCP -->
+  <!-- Preload hero for LCP -->
   <link
     rel="preload"
     as="image"
-    href="assets/bts-title-optimized.webp"
-    imagesrcset="assets/bts-title-optimized-small.webp 600w, assets/bts-title-optimized.webp 1200w"
+    href="/attached_assets/bts-title-optimized.webp"
+    imagesrcset="/attached_assets/bts-title-optimized-small.webp 600w, /attached_assets/bts-title-optimized.webp 1200w"
     imagesizes="(max-width: 600px) 600px, 1200px"
   />
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="assets/favicon.ico" sizes="any" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <!-- Styles and app manifest -->
+  <link rel="stylesheet" href="/attached_assets/style.css?v=3" />
+  <link rel="manifest" href="/attached_assets/manifest.json" />
 
-  <!-- Podcast schema (lightweight) -->
+  <!-- Icons -->
+  <link rel="icon" href="/attached_assets/favicon.ico" sizes="any" />
+  <link rel="icon" href="/attached_assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/attached_assets/apple-touch-icon.png" />
+
+  <!-- Podcast schema -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"PodcastSeries",
     "name":"The Bedtime Scientist",
     "description":"Calm, factual bedtime science so kids can learn softly and sleep soundly.",
-    "url":"https://thebedtimescientist-gif.github.io/",
+    "url":"https://bedtimescientist.com/",
     "inLanguage":"en",
     "genre":["Kids & Family","Education","Science"],
-    "publisher":{
-      "@type":"Organization",
-      "name":"The Bedtime Scientist"
-    }
+    "publisher":{"@type":"Organization","name":"The Bedtime Scientist"}
   }
   </script>
 
-  <script src="app.js" defer></script>
+  <script src="/attached_assets/app.js" defer></script>
 </head>
 <body>
   <!-- Skip link for keyboard users -->
@@ -58,12 +58,11 @@
 
   <header class="header" role="banner">
     <div class="logo-container">
-      <!-- Accessible text title, with visual image for brand art -->
       <h1 class="site-title">
         <span class="visually-hidden">The Bedtime Scientist</span>
         <img
-          src="assets/bts-title-optimized.webp"
-          srcset="assets/bts-title-optimized-small.webp 600w, assets/bts-title-optimized.webp 1200w"
+          src="/attached_assets/bts-title-optimized.webp"
+          srcset="/attached_assets/bts-title-optimized-small.webp 600w, /attached_assets/bts-title-optimized.webp 1200w"
           sizes="(max-width: 600px) 600px, 1200px"
           width="1200"
           height="324"
@@ -108,7 +107,7 @@
           rel="noopener noreferrer"
           class="cta-button spotify"
         >
-          <img src="assets/spotify.svg" class="icon" width="32" height="32" alt="" aria-hidden="true" />
+          <img src="/attached_assets/spotify.svg" class="icon" width="32" height="32" alt="" aria-hidden="true" />
           Listen on Spotify
         </a>
         <a
@@ -117,7 +116,7 @@
           rel="noopener noreferrer"
           class="cta-button apple"
         >
-          <img src="assets/apple-podcasts.svg" class="icon" width="32" height="32" alt="" aria-hidden="true" />
+          <img src="/attached_assets/apple-podcasts.svg" class="icon" width="32" height="32" alt="" aria-hidden="true" />
           Listen on Apple
         </a>
       </div>
@@ -127,7 +126,7 @@
       <h2 id="latestHeading">Latest episode</h2>
       <figure class="episode">
         <img
-          src="assets/latest_ep.png"
+          src="/attached_assets/latest_ep.png"
           alt="Artwork for the latest episode: The Science of Sleep"
           width="300"
           height="300"
