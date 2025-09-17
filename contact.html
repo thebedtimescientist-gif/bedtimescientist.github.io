@@ -61,7 +61,6 @@
 <body class="antialiased">
     <div class="cosmic-bg"></div>
 
-    <!-- Header -->
     <header class="relative z-50 bg-slate-900/30 backdrop-blur-lg border-b border-purple-500/30">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="/" class="font-serif-display text-2xl font-bold text-white flex items-center gap-2">
@@ -70,6 +69,7 @@
             </a>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="episodes.html" class="text-slate-300 hover:text-purple-300 transition-colors">Episodes</a>
+                <a href="about.html" class="text-slate-300 hover:text-purple-300 transition-colors">About</a>
                 <a href="shop.html" class="text-slate-300 hover:text-purple-300 transition-colors">Shop</a>
                 <a href="contact.html" class="text-purple-300 font-semibold">Contact</a>
                 <a href="donate.html" class="text-slate-300 hover:text-purple-300 transition-colors">Donate</a>
@@ -88,7 +88,6 @@
             </div>
 
             <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
-                <!-- Contact Form -->
                 <div class="card-glow p-8 rounded-2xl">
                     <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                         <i data-lucide="mail" class="text-purple-400"></i>
@@ -110,7 +109,7 @@
                                 <option value="custom-story">Custom Story Request</option>
                                 <option value="episode-suggestion">Episode Suggestion</option>
                                 <option value="general">General Question</option>
-                                <option value="feedback">Feedback</option>
+                                <option value="feedback">Feedback / Testimonial</option>
                                 <option value="partnership">Partnership Inquiry</option>
                             </select>
                         </div>
@@ -124,9 +123,7 @@
                     </form>
                 </div>
 
-                <!-- Custom Stories & Info -->
                 <div class="space-y-8">
-                    <!-- Custom Stories -->
                     <div class="card-glow p-8 rounded-2xl">
                         <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                             <i data-lucide="heart" class="text-purple-400"></i>
@@ -163,7 +160,6 @@
                         </div>
                     </div>
 
-                    <!-- Episode Suggestions -->
                     <div class="card-glow p-6 rounded-2xl">
                         <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
                             <i data-lucide="lightbulb" class="text-purple-400"></i>
@@ -173,37 +169,37 @@
                             What science topic would your little one love to learn about? Send me your ideas and I might feature them in a future episode!
                         </p>
                     </div>
-
-                    <!-- Response Time -->
-                    <div class="card-glow p-6 rounded-2xl">
-                        <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                            <i data-lucide="clock" class="text-purple-400"></i>
-                            Response Time
-                        </h2>
-                        <p class="text-purple-200 text-sm">
-                            I typically respond to messages within 24-48 hours. Custom story requests may take 1-2 weeks to complete depending on current demand.
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="relative z-10 bg-slate-900/60 border-t border-purple-500/30 py-12">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center items-center gap-2 mb-4">
-                <i data-lucide="telescope" class="text-purple-400"></i>
-                <span class="font-serif-display text-xl font-bold text-white">The Bedtime Scientist</span>
+    <footer class="relative z-10 bg-slate-900/60 border-t border-purple-500/30 pt-16 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-12 card-glow p-8 rounded-2xl">
+                <h3 class="text-2xl font-bold font-serif-display text-white mb-4">Subscribe to our Newsletter</h3>
+                <p class="text-purple-200 mb-6">Get new episodes, activity sheets, and science news sent straight to your inbox.</p>
+                <form action="mailto:thebedtimescientist@gmail.com?subject=Newsletter%20Signup" method="post" enctype="text/plain" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" name="email" placeholder="Your email address..." required class="flex-grow bg-slate-800 text-white px-4 py-3 rounded-lg border border-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-400">
+                    <button type="submit" class="bg-purple-600 text-white font-bold py-3 px-6 rounded-full hover:bg-purple-500 transition-colors">Subscribe</button>
+                </form>
             </div>
-            <p class="text-purple-200 mb-6">Sparking wonder, one dream at a time.</p>
-            <div class="flex justify-center space-x-6 mb-6">
-                <a href="episodes.html" class="text-purple-300 hover:text-purple-200">Episodes</a>
-                <a href="shop.html" class="text-purple-300 hover:text-purple-200">Shop</a>
-                <a href="contact.html" class="text-purple-300 hover:text-purple-200">Contact</a>
-                <a href="donate.html" class="text-purple-300 hover:text-purple-200">Donate</a>
+
+            <div class="text-center">
+                <div class="flex justify-center items-center gap-2 mb-4">
+                    <i data-lucide="telescope" class="text-purple-400"></i>
+                    <span class="font-serif-display text-xl font-bold text-white">The Bedtime Scientist</span>
+                </div>
+                <p class="text-purple-200 mb-6">Sparking wonder, one dream at a time.</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="episodes.html" class="text-purple-300 hover:text-purple-200">Episodes</a>
+                    <a href="about.html" class="text-purple-300 hover:text-purple-200">About</a>
+                    <a href="shop.html" class="text-purple-300 hover:text-purple-200">Shop</a>
+                    <a href="contact.html" class="text-purple-300 hover:text-purple-200">Contact</a>
+                    <a href="donate.html" class="text-purple-300 hover:text-purple-200">Donate</a>
+                </div>
+                <p class="text-slate-400">&copy; 2025 The Bedtime Scientist. Sweet dreams and curious minds.</p>
             </div>
-            <p class="text-slate-400">&copy; 2025 The Bedtime Scientist. Sweet dreams and curious minds.</p>
         </div>
     </footer>
 
