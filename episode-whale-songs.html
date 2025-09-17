@@ -53,12 +53,22 @@
             border: 3px solid rgba(168, 85, 247, 0.4);
             height: 300px;
         }
+        
+        .glow-button-light {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            transition: all 0.3s ease;
+        }
+        .glow-button-light:hover {
+            background: rgba(168, 85, 247, 0.2);
+            border-color: rgba(168, 85, 247, 0.7);
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+        }
     </style>
 </head>
 <body class="antialiased">
     <div class="cosmic-bg"></div>
 
-    <!-- Header -->
     <header class="relative z-50 bg-slate-900/30 backdrop-blur-lg border-b border-purple-500/30">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="/" class="font-serif-display text-2xl font-bold text-white flex items-center gap-2">
@@ -67,6 +77,7 @@
             </a>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="episodes.html" class="text-slate-300 hover:text-purple-300 transition-colors">Episodes</a>
+                <a href="about.html" class="text-slate-300 hover:text-purple-300 transition-colors">About</a>
                 <a href="shop.html" class="text-slate-300 hover:text-purple-300 transition-colors">Shop</a>
                 <a href="contact.html" class="text-slate-300 hover:text-purple-300 transition-colors">Contact</a>
                 <a href="donate.html" class="text-slate-300 hover:text-purple-300 transition-colors">Donate</a>
@@ -77,7 +88,6 @@
 
     <main class="relative z-10 py-20">
         <div class="container mx-auto px-6">
-            <!-- Episode Header -->
             <div class="text-center mb-12">
                 <div class="flex items-center justify-center gap-2 mb-4">
                     <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Episode 2</span>
@@ -88,12 +98,13 @@
                 </p>
             </div>
 
-            <!-- Audio Player -->
             <div class="max-w-3xl mx-auto mb-16">
                 <div class="card-glow p-8 rounded-2xl text-center">
                     <h2 class="text-2xl font-bold text-white mb-6">Listen to the Episode</h2>
                     <div class="bg-slate-800 rounded-xl p-4">
-                        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/0TbVkY8BYTPJlgWBNBqEPU?utm_source=generator&theme=0&t=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <div id="buzzsprout-player-17740307"></div>
+                        <script src="https://www.buzzsprout.com/2532225/episodes/17740307-placeholder-whale-songs.js?container_id=buzzsprout-player-17740307&player=small" type="text/javascript" charset="utf-8"></script>
+                        <p class="text-xs text-slate-400 text-center mt-2">(Placeholder player for consistency)</p>
                     </div>
                     <div class="flex items-center justify-center gap-6 mt-6 text-purple-300">
                         <span class="flex items-center gap-1">
@@ -108,12 +119,10 @@
                 </div>
             </div>
 
-            <!-- Episode Image -->
             <div class="max-w-3xl mx-auto mb-16">
                 <div class="whale-episode-bg"></div>
             </div>
 
-            <!-- Episode Description -->
             <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 mb-16">
                 <div class="card-glow p-8 rounded-2xl">
                     <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
@@ -126,9 +135,6 @@
                         </p>
                         <p>
                             Your little scientist will learn how different whales sing different songs, why they make these beautiful sounds, and how scientists use special underwater microphones to listen to whale conversations.
-                        </p>
-                        <p>
-                            Close your eyes and imagine floating in the peaceful ocean, surrounded by the gentle melodies of these magnificent creatures as they call to their friends across the vast blue sea.
                         </p>
                     </div>
                 </div>
@@ -155,15 +161,43 @@
                             <i data-lucide="check" class="w-5 h-5 text-purple-400 mt-0.5"></i>
                             The difference between humpback and blue whale songs
                         </li>
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check" class="w-5 h-5 text-purple-400 mt-0.5"></i>
-                            How scientists study and protect whales
-                        </li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Transcript -->
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 mb-16">
+                <div class="card-glow p-8 rounded-2xl">
+                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i data-lucide="edit" class="text-purple-400"></i>
+                        Episode Activities
+                    </h2>
+                    <p class="text-purple-200 mb-6">Continue the adventure! Download these fun printables for your little scientist.</p>
+                    <div class="space-y-4">
+                        <a href="#" class="w-full text-purple-200 font-bold py-4 px-6 rounded-lg inline-flex items-center justify-center gap-3 glow-button-light">
+                            <i data-lucide="image"></i>
+                            Printable Whale Coloring Page
+                        </a>
+                        <a href="#" class="w-full text-purple-200 font-bold py-4 px-6 rounded-lg inline-flex items-center justify-center gap-3 glow-button-light">
+                            <i data-lucide="music"></i>
+                            Match the Whale Song
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-glow p-8 rounded-2xl">
+                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i data-lucide="book" class="text-purple-400"></i>
+                        Science Words
+                    </h2>
+                    <ul class="text-purple-200 space-y-3">
+                        <li><strong class="text-white">Melody:</strong> A beautiful pattern of sounds that makes a song.</li>
+                        <li><strong class="text-white">Hydrophone:</strong> A special underwater microphone that scientists use to listen to whales.</li>
+                        <li><strong class="text-white">Humpback Whale:</strong> A large whale famous for singing long, magical songs.</li>
+                        <li><strong class="text-white">Blue Whale:</strong> The biggest animal on Earth! It makes very deep, rumbly songs.</li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="max-w-4xl mx-auto">
                 <div class="card-glow p-8 rounded-2xl">
                     <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
@@ -176,38 +210,12 @@
                             Tonight, we're going on a magical journey to the deep blue ocean, where the largest animals on Earth create the most beautiful music you've ever heard. Are you ready to listen to the songs of the whales?
                         </p>
                         <p>
-                            Imagine floating gently in the warm ocean water. Everything is peaceful and blue around you. Suddenly, you hear the most amazing sound - a deep, haunting melody that seems to come from everywhere at once. This is a whale song!
+                            (Transcript continues...)
                         </p>
-                        <p>
-                            Whales are incredible musicians. Humpback whales are especially famous for their songs. They create long, complex melodies that can last for up to 30 minutes. Each whale has its own special song, kind of like how each person has their own voice.
-                        </p>
-                        <p>
-                            But here's the amazing part - these songs can travel for thousands and thousands of miles through the ocean! It's like the whales have their own underwater telephone system. A whale near Hawaii can sing a song that another whale near Alaska might hear!
-                        </p>
-                        <p>
-                            Blue whales, the largest animals that have ever lived on Earth, make the deepest sounds. Their songs are so low that human ears can barely hear them. These gentle giants use their powerful voices to call to other blue whales across entire ocean basins.
-                        </p>
-                        <p>
-                            Scientists think whales sing for many reasons. Sometimes they're calling to their friends or family. Sometimes they're looking for a mate. And sometimes, maybe they're just singing because it makes them happy - just like when you sing your favorite song!
-                        </p>
-                        <p>
-                            To study whale songs, scientists use special underwater microphones called hydrophones. These amazing devices let researchers listen to whale conversations from far away, without disturbing these peaceful creatures.
-                        </p>
-                        <p>
-                            Did you know that whales in different parts of the ocean sing in different "accents"? Just like how people from different places might speak a little differently, whales from the Pacific Ocean might sing slightly different songs than whales from the Atlantic Ocean.
-                        </p>
-                        <p>
-                            The ocean can be a big, lonely place, but with their beautiful songs, whales never have to feel alone. They're always connected to their whale family through their music.
-                        </p>
-                        <p>
-                            As you close your eyes tonight, imagine yourself floating peacefully in the gentle ocean currents, listening to the distant, beautiful songs of the whales. Let their melodies carry you into the most wonderful dreams of underwater adventures...
-                        </p>
-                        <p class="font-semibold">Sweet dreams, little scientist. May your dreams be filled with the music of the sea.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Navigation -->
             <div class="max-w-4xl mx-auto mt-16 flex justify-between items-center">
                 <a href="episode-axolotl.html" class="text-purple-300 hover:text-purple-200 font-semibold inline-flex items-center gap-2">
                     <i data-lucide="arrow-left"></i>
@@ -221,21 +229,32 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="relative z-10 bg-slate-900/60 border-t border-purple-500/30 py-12 mt-20">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center items-center gap-2 mb-4">
-                <i data-lucide="telescope" class="text-purple-400"></i>
-                <span class="font-serif-display text-xl font-bold text-white">The Bedtime Scientist</span>
+    <footer class="relative z-10 bg-slate-900/60 border-t border-purple-500/30 pt-16 pb-12 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-12 card-glow p-8 rounded-2xl">
+                <h3 class="text-2xl font-bold font-serif-display text-white mb-4">Subscribe to our Newsletter</h3>
+                <p class="text-purple-200 mb-6">Get new episodes, activity sheets, and science news sent straight to your inbox.</p>
+                <form action="mailto:thebedtimescientist@gmail.com?subject=Newsletter%20Signup" method="post" enctype="text/plain" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" name="email" placeholder="Your email address..." required class="flex-grow bg-slate-800 text-white px-4 py-3 rounded-lg border border-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-400">
+                    <button type="submit" class="bg-purple-600 text-white font-bold py-3 px-6 rounded-full hover:bg-purple-500 transition-colors">Subscribe</button>
+                </form>
             </div>
-            <p class="text-purple-200 mb-6">Sparking wonder, one dream at a time.</p>
-            <div class="flex justify-center space-x-6 mb-6">
-                <a href="episodes.html" class="text-purple-300 hover:text-purple-200">Episodes</a>
-                <a href="shop.html" class="text-purple-300 hover:text-purple-200">Shop</a>
-                <a href="contact.html" class="text-purple-300 hover:text-purple-200">Contact</a>
-                <a href="donate.html" class="text-purple-300 hover:text-purple-200">Donate</a>
+
+            <div class="text-center">
+                <div class="flex justify-center items-center gap-2 mb-4">
+                    <i data-lucide="telescope" class="text-purple-400"></i>
+                    <span class="font-serif-display text-xl font-bold text-white">The Bedtime Scientist</span>
+                </div>
+                <p class="text-purple-200 mb-6">Sparking wonder, one dream at a time.</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="episodes.html" class="text-purple-300 hover:text-purple-200">Episodes</a>
+                    <a href="about.html" class="text-purple-300 hover:text-purple-200">About</a>
+                    <a href="shop.html" class="text-purple-300 hover:text-purple-200">Shop</a>
+                    <a href="contact.html" class="text-purple-300 hover:text-purple-200">Contact</a>
+                    <a href="donate.html" class="text-purple-300 hover:text-purple-200">Donate</a>
+                </div>
+                <p class="text-slate-400">&copy; 2025 The Bedtime Scientist. Sweet dreams and curious minds.</p>
             </div>
-            <p class="text-slate-400">&copy; 2025 The Bedtime Scientist. Sweet dreams and curious minds.</p>
         </div>
     </footer>
 
