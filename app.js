@@ -1,131 +1,134 @@
-document.addEventListener('DOMContentLoaded', () => {
-    /* ----- Theme toggle ----- */
-    const themeToggle = document.getElementById('theme-toggle');
-    const htmlEl = document.documentElement;
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+/* =========
+   Utilities
+   ========= */
+const $ = (sel, ctx = document) => ctx.querySelector(sel);
+const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        htmlEl.setAttribute('data-theme', 'dark');
-        themeToggle.setAttribute('aria-pressed', 'true');
-    } else {
-        htmlEl.setAttribute('data-theme', 'light');
-        themeToggle.setAttribute('aria-pressed', 'false');
+/* =========
+   Year stamp
+   ========= */
+(function stampYear() {
+  const el = $('#year');
+  if (el) el.textContent = String(new Date().getFullYear());
+})();
+
+/* =================
+   Theme: dark / light
+   ================= */
+(function themeInit() {
+  const btn = $('#theme-toggle');
+  if (!btn) return;
+
+  const STORAGE_KEY = 'bts-theme';
+  const root = document.documentElement;
+
+  function apply(theme) {
+    const dark = theme === 'dark';
+    root.dataset.theme = dark ? 'dark' : 'light';
+    btn.setAttribute('aria-pressed', String(dark));
+  }
+
+  // pick from storage, then system preference, default to light
+  const saved = localStorage.getItem(STORAGE_KEY);
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  apply(saved || (prefersDark ? 'dark' : 'light'));
+
+  btn.addEventListener('click', () => {
+    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    apply(next);
+    localStorage.setItem(STORAGE_KEY, next);
+  });
+})();
+
+/* ================
+   Gentle Sleep Timer
+   ================ */
+(function sleepTimer() {
+  const overlay = $('#sleep-fade-overlay');
+  const status = $('#timer-status');
+  const cancelBtn = $('#cancel-timer');
+  const buttons = $$('.timer-button[data-sleep-minutes]');
+
+  let endAt = null;
+  let rafId = null;
+  let ticking = false;
+
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function announce(text) {
+    if (status) status.textContent = text;
+  }
+
+  function clearTimer(reason = 'Timer canceled') {
+    endAt = null;
+    ticking = false;
+    cancelBtn.disabled = true;
+    overlay.style.transition = '';
+    overlay.style.opacity = '0';
+    overlay.setAttribute('aria-hidden', 'true');
+    if (rafId) cancelAnimationFrame(rafId);
+    announce(reason);
+  }
+
+  function tick() {
+    if (!ticking || !endAt) return;
+
+    const now = performance.now();
+    const msLeft = endAt - now;
+
+    if (msLeft <= 0) {
+      // Dim to black
+      overlay.setAttribute('aria-hidden', 'false');
+      overlay.style.opacity = '1';
+
+      // Respect reduced motion
+      overlay.style.transition = reduceMotion ? 'opacity 0.01s linear' : 'opacity 18s ease-out';
+
+      announce('Good night. Dimming now.');
+      ticking = false;
+      cancelBtn.disabled = true;
+      return;
     }
 
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = htmlEl.getAttribute('data-theme');
-        if (currentTheme === 'light') {
-            htmlEl.setAttribute('data-theme', 'dark');
-            themeToggle.setAttribute('aria-pressed', 'true');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            htmlEl.setAttribute('data-theme', 'light');
-            themeToggle.setAttribute('aria-pressed', 'false');
-            localStorage.setItem('theme', 'light');
-        }
+    // Friendly readout
+    const totalSec = Math.ceil(msLeft / 1000);
+    const m = Math.floor(totalSec / 60);
+    const s = totalSec % 60;
+    announce(`Timer on: ${m}m ${s < 10 ? '0' : ''}${s}s`);
+
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function start(minutes) {
+    const ms = minutes * 60 * 1000;
+    endAt = performance.now() + ms;
+    ticking = true;
+    cancelBtn.disabled = false;
+
+    // Reset overlay
+    overlay.style.opacity = '0';
+    overlay.setAttribute('aria-hidden', 'true');
+
+    announce(`Timer started for ${minutes} minutes`);
+    rafId = requestAnimationFrame(tick);
+  }
+
+  // Wire duration buttons
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const minutes = parseInt(btn.getAttribute('data-sleep-minutes'), 10);
+      if (!Number.isFinite(minutes) || minutes <= 0) return;
+      start(minutes);
     });
+  });
 
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
-            if (e.matches) {
-                htmlEl.setAttribute('data-theme', 'dark');
-                themeToggle.setAttribute('aria-pressed', 'true');
-            } else {
-                htmlEl.setAttribute('data-theme', 'light');
-                themeToggle.setAttribute('aria-pressed', 'false');
-            }
-        }
-    });
+  // Wire cancel
+  cancelBtn?.addEventListener('click', () => clearTimer());
 
-    /* ----- Gentle Sleep Timer ----- */
-    const overlay = document.getElementById('sleep-fade-overlay');
-    const statusEl = document.getElementById('timer-status');
-    const cancelBtn = document.getElementById('cancel-timer');
-    const presetButtons = document.querySelectorAll('[data-sleep-minutes]');
-
-    let timerInterval = null;
-    let endTimeMs = null;
-    let lastAnnouncedMinutes = null;
-
-    function formatTime(ms) {
-        const totalSec = Math.max(0, Math.floor(ms / 1000));
-        const m = Math.floor(totalSec / 60);
-        const s = totalSec % 60;
-        return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+  // Escape key cancels
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && ticking) {
+      clearTimer();
     }
-
-    function clearTimerState() {
-        if (timerInterval) {
-            clearInterval(timerInterval);
-            timerInterval = null;
-        }
-        endTimeMs = null;
-        lastAnnouncedMinutes = null;
-        cancelBtn.disabled = true;
-    }
-
-    function startFade() {
-        overlay.classList.add('is-fading');
-        statusEl.textContent = 'Fading to black. Goodnight.';
-    }
-
-    function stopFade() {
-        overlay.classList.remove('is-fading');
-    }
-
-    function updateCountdown() {
-        const remaining = endTimeMs - Date.now();
-
-        if (remaining <= 0) {
-            clearTimerState();
-            startFade();
-            return;
-        }
-
-        statusEl.textContent = `Time remaining: ${formatTime(remaining)}`;
-
-        const minutes = Math.ceil(remaining / 60000);
-        if (minutes !== lastAnnouncedMinutes && minutes > 0) {
-            statusEl.textContent = `Timer set. ${minutes} minute${minutes === 1 ? '' : 's'} remaining`;
-            lastAnnouncedMinutes = minutes;
-        } else if (remaining <= 10000) {
-            statusEl.textContent = `Almost there: ${formatTime(remaining)}`;
-        }
-    }
-
-    function startTimer(minutes) {
-        clearTimerState();
-        stopFade();
-
-        endTimeMs = Date.now() + minutes * 60 * 1000;
-        cancelBtn.disabled = false;
-
-        statusEl.textContent = `Timer set for ${minutes} minute${minutes === 1 ? '' : 's'}.`;
-
-        updateCountdown();
-        timerInterval = setInterval(updateCountdown, 1000);
-    }
-
-    function cancelTimer() {
-        clearTimerState();
-        stopFade();
-        statusEl.textContent = 'Timer off';
-    }
-
-    presetButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const minutes = parseInt(btn.getAttribute('data-sleep-minutes'), 10);
-            if (!Number.isNaN(minutes) && minutes > 0) {
-                startTimer(minutes);
-            }
-        });
-    });
-
-    cancelBtn.addEventListener('click', cancelTimer);
-
-    document.addEventListener('visibilitychange', () => {
-        if (!timerInterval || !endTimeMs) return;
-        updateCountdown();
-    });
-});
+  });
+})();
