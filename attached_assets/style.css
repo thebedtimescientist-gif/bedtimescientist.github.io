@@ -1,0 +1,346 @@
+/* =========================================================
+   THE BEDTIME SCIENTIST — Global Styles
+   Paste this as attached_assets/style.css
+   ========================================================= */
+
+/* 0) Reset & base ---------------------------------------------------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html:focus-within { scroll-behavior: smooth; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bts-bg);
+  color: var(--bts-text);
+}
+
+/* Media elements scale nicely */
+img, picture, svg, video, canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Links */
+a { color: var(--bts-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Headings scale */
+h1, h2, h3 {
+  line-height: 1.25;
+  margin: 0.5rem 0 0.35rem;
+}
+
+/* 1) Design Tokens (Light/Dark) ------------------------------------------- */
+:root {
+  /* Night theme (default) */
+  --bts-bg: #0c1222;
+  --bts-bg-soft: #121a30;
+  --bts-surface: #1b2440;
+  --bts-surface-2: #263055;
+  --bts-text: #eaf0ff;
+  --bts-text-dim: #c9d2f0;
+  --bts-accent: #7aa2ff;   /* gentle blue */
+  --bts-accent-2: #8fe3cf; /* minty teal */
+  --bts-focus: #ffd166;    /* warm focus ring */
+
+  --radius: 12px;
+  --radius-lg: 18px;
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.25);
+
+  --container: min(1000px, 92vw);
+
+  /* Type scale */
+  --fs-hero: clamp(1.2rem, 1.2rem + 2vw, 2rem);
+  --fs-h2: clamp(1.05rem, 0.95rem + 1.3vw, 1.6rem);
+  --fs-body: clamp(0.98rem, 0.92rem + 0.4vw, 1.05rem);
+}
+
+:root[data-theme="light"] {
+  --bts-bg: #f7f9ff;
+  --bts-bg-soft: #eef3ff;
+  --bts-surface: #ffffff;
+  --bts-surface-2: #f2f5ff;
+  --bts-text: #0d1530;
+  --bts-text-dim: #35426a;
+  --bts-accent: #3b66ff;
+  --bts-accent-2: #2ec4b6;
+  --bts-focus: #6b4eff;
+}
+
+/* 2) A11y helpers --------------------------------------------------------- */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+  overflow: hidden; white-space: nowrap;
+}
+
+:focus-visible {
+  outline: 3px solid var(--bts-focus);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--bts-focus);
+  color: #000;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+  z-index: 1000;
+}
+.skip-link:focus { left: 0; }
+
+/* 3) Layout wrappers ------------------------------------------------------ */
+.header,
+.main-content,
+.footer {
+  width: var(--container);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.header { text-align: center; padding-top: 1rem; }
+
+/* 4) Brand hero ----------------------------------------------------------- */
+.logo-container { display: grid; place-items: center; }
+
+.site-title { margin: 0; }
+
+.tagline {
+  margin: 0.2rem 0 0;
+  font-size: var(--fs-hero);
+  color: var(--bts-accent-2);
+  letter-spacing: 0.2px;
+}
+
+.subtitle {
+  margin: 0.2rem 0 1rem;
+  color: var(--bts-text-dim);
+  font-size: clamp(0.95rem, 0.9rem + 0.5vw, 1.1rem);
+}
+
+/* 5) Nav ------------------------------------------------------------------ */
+.nav {
+  margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list a {
+  color: var(--bts-text);
+  text-decoration: none;
+  padding: 0.45rem 0.7rem;
+  background: transparent;
+  border-radius: 10px;
+}
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  background: var(--bts-bg-soft);
+  text-decoration: none;
+}
+
+/* 6) Theme switcher ------------------------------------------------------- */
+.theme-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-self: end;
+}
+
+.theme-toggle-label {
+  color: var(--bts-text-dim);
+  font-size: 0.95rem;
+}
+
+.theme-toggle-btn {
+  position: relative;
+  inline-size: 3rem; block-size: 1.6rem;
+  border-radius: 999px;
+  background: var(--bts-bg-soft);
+  border: 1px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+}
+.theme-toggle-btn .toggle-indicator {
+  position: absolute;
+  inset-block-start: 2px; inset-inline-start: 2px;
+  inline-size: 1.2rem; block-size: 1.2rem;
+  background: var(--bts-text);
+  border-radius: 999px;
+  transition: transform 180ms ease;
+}
+:root[data-theme="dark"] .theme-toggle-btn .toggle-indicator {
+  transform: translateX(1.4rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle-btn .toggle-indicator { transition: none; }
+}
+
+/* 7) Sections ------------------------------------------------------------- */
+main.main-content { padding-block: 1rem 2rem; }
+
+section {
+  margin-block: 1.25rem 1.75rem;
+  padding: 1rem;
+  background: linear-gradient(0deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02)), var(--bts-surface);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.podcast-links h2,
+.latest-episode h2,
+.sleep-timer h2 {
+  font-size: var(--fs-h2);
+}
+
+/* 8) Buttons & link chips ------------------------------------------------- */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-lg);
+  background: var(--bts-surface-2);
+  color: var(--bts-text);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  font-weight: 600;
+}
+.cta-button:hover,
+.cta-button:focus-visible {
+  outline: 3px solid var(--bts-focus);
+  outline-offset: 2px;
+  text-decoration: none;
+}
+
+/* Optional platform accents */
+.cta-button.spotify { border-color: rgba(30,215,96,0.35); }
+.cta-button.apple   { border-color: rgba(190, 0, 255, 0.25); }
+
+.icon { width: 32px; height: 32px; }
+
+/* 9) Latest Episode ------------------------------------------------------- */
+.latest-episode .episode {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.episode-art {
+  border-radius: calc(var(--radius-lg) * 0.7);
+  box-shadow: var(--shadow-soft);
+}
+
+.episode-description {
+  max-width: 60ch;
+  color: var(--bts-text-dim);
+  font-size: var(--fs-body);
+}
+
+/* 10) Sleep Timer --------------------------------------------------------- */
+.sleep-timer .sleep-timer-help {
+  margin: 0.25rem 0 0.5rem;
+  color: var(--bts-text-dim);
+}
+
+.timer-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-block: 0.5rem 0.25rem;
+}
+
+.timer-button {
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--bts-surface-2);
+  color: var(--bts-text);
+  cursor: pointer;
+  font-weight: 600;
+}
+.timer-button:hover:not(:disabled) { filter: brightness(1.05); }
+.timer-button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.timer-button.outline {
+  background: transparent;
+  color: var(--bts-text-dim);
+  border-color: var(--bts-text-dim);
+}
+
+.timer-status {
+  min-height: 1.5rem; /* keeps layout stable as text updates */
+  color: var(--bts-text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Fade overlay: JS will change opacity and transition on end */
+.sleep-fade-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* 11) Footer -------------------------------------------------------------- */
+.footer {
+  text-align: center;
+  color: var(--bts-text-dim);
+  padding: 2rem 1rem 3rem;
+  font-size: 0.95rem;
+  background: transparent;
+}
+
+/* 12) Small screens tweaks ------------------------------------------------ */
+@media (max-width: 720px) {
+  .nav {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.75rem;
+  }
+  .theme-switcher { justify-self: center; }
+  section { padding: 0.85rem; }
+}
+
+/* 13) Print --------------------------------------------------------------- */
+@media print {
+  :root { --bts-bg: #fff; --bts-text: #000; }
+  body { color: #000; background: #fff; }
+  .sleep-fade-overlay { display: none !important; }
+  a { text-decoration: underline; }
+}
